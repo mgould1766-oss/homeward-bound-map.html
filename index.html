@@ -6,133 +6,143 @@
 
 <title>Homeward Bound · The Grand Adventure</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
 <style>
-/* --- (same styles as before, unchanged) --- */
-:root {
-  --sky:#DDECF8; --sky-soft:#EEF7FC; --rose:#F7DDE2;
-  --lilac:#D7C9E8; --white:#FFFFFF; --ink:#2F3A4A;
-  --muted:#6B7280; --line:#D9E6F2; --card:#FFFFFF;
-  --shadow:0 10px 28px rgba(47,58,74,.10);
-  --blue:#92A1C3; --rose-dark:#B86F85;
-  --green:#7BAE8C; --gold:#E8B86D;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;font-family:"Open Sans";color:var(--ink);
-  background:linear-gradient(180deg,var(--sky) 0%,var(--sky-soft) 48%,var(--white) 100%);
-}
-.page-wrap{max-width:1120px;margin:auto;padding:28px}
-.hero{background:#fff;border-radius:30px;padding:40px;text-align:center;box-shadow:var(--shadow)}
-h1{font-family:"Quicksand";font-size:48px;margin:0}
-.subtitle{color:var(--muted)}
-.stat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}
-.stat{background:#fff;border-radius:14px;padding:12px;border:1px solid var(--line)}
-.stat .num{font-size:28px;font-weight:700;color:var(--rose-dark)}
-.pill-row{margin-top:20px}
-.soft-pill{background:#fff;border:1px solid var(--line);padding:8px 12px;border-radius:999px;margin:4px;display:inline-block}
-.map-card{margin-top:25px;background:#fff;padding:15px;border-radius:20px;box-shadow:var(--shadow)}
-#homewardMap{height:520px;border-radius:20px}
-.day-section{margin-top:30px;background:#fff;padding:25px;border-radius:20px;box-shadow:var(--shadow)}
-.timeline{padding-left:20px;border-left:3px solid var(--blue)}
-.stop{margin-bottom:15px}
-.stop h3{margin:0;font-family:"Quicksand"}
-.side-card{margin-top:15px;background:#f9fbff;padding:15px;border-radius:15px}
+body {font-family:"Open Sans"; margin:0; background:#f4f8fc; color:#2F3A4A;}
+.container {max-width:1000px;margin:auto;padding:20px;}
+.day {background:white;padding:20px;margin:20px 0;border-radius:18px;box-shadow:0 8px 20px rgba(0,0,0,.08);}
+h1,h2{font-family:"Quicksand";}
+.tag{display:inline-block;background:#eef3fb;padding:5px 10px;border-radius:999px;margin:5px;font-size:12px;}
 </style>
 </head>
 
 <body>
-<div class="page-wrap">
+<div class="container">
 
-<header class="hero">
-<h1>Buena Park to Goldsboro</h1>
-<p class="subtitle">The return journey home</p>
+<h1>Homeward Bound</h1>
+<p>Buena Park → Goldsboro</p>
 
-<div class="stat-strip">
-<div class="stat"><div class="num">15</div>Days</div>
-<div class="stat"><div class="num">3690</div>Miles</div>
-<div class="stat"><div class="num">13</div>Hotels</div>
-<div class="stat"><div class="num">35+</div>Stops</div>
-</div>
-
-<div class="pill-row">
-<span class="soft-pill">Vegetarian friendly</span>
-<span class="soft-pill">Family paced</span>
-</div>
-</header>
-
-<section class="map-card">
-<div id="homewardMap"></div>
-</section>
+---
 
 <!-- DAY 1 -->
-<section class="day-section" id="day-1">
-<h2>Day 1 — Buena Park → Madera</h2>
-<p>Easy transition day heading north.</p>
-
-<div class="timeline">
-<div class="stop"><h3>Depart Buena Park</h3></div>
-<div class="stop"><h3>Lunch — Black Bear Diner</h3></div>
-<div class="stop"><h3>Arrive Madera</h3></div>
+<div class="day">
+<h2>Day 1 — Buena Park → Oakhurst</h2>
+<p>~5 hrs</p>
+<p>Set up for Yosemite.</p>
+<span class="tag">Hampton Inn Oakhurst</span>
+<span class="tag">Easy Day</span>
 </div>
-</section>
+
+---
 
 <!-- DAY 2 -->
-<section class="day-section" id="day-2">
-<h2>Day 2 — Yosemite Day</h2>
-<p>The highlight of the entire return trip.</p>
-
-<div class="timeline">
-
-<div class="stop">
-<h3>Mariposa Grove</h3>
-<p>Walk among giant sequoias. Start early.</p>
-</div>
-
-<div class="stop">
-<h3>Tunnel View</h3>
-<p>Classic Yosemite postcard view.</p>
-</div>
-
-<div class="stop">
-<h3>Lunch — Base Camp Eatery</h3>
-<p>Reliable and vegetarian-friendly.</p>
-</div>
-
-<div class="stop">
-<h3>Yosemite Falls</h3>
-<p>Short walk, huge payoff.</p>
-</div>
-
-<div class="stop">
-<h3>Bridalveil Fall</h3>
-<p>Perfect final stop before heading back.</p>
-</div>
-
-</div>
-
-<div class="side-card">
-<h3>What to know</h3>
+<div class="day">
+<h2>Day 2 — Yosemite → Tehachapi</h2>
+<p>Morning Yosemite highlights + flow-through drive.</p>
 <ul>
-<li>Leave early</li>
-<li>Expect crowds</li>
-<li>Bring snacks</li>
-<li>Hydrate</li>
+<li>Tunnel View</li>
+<li>Bridalveil Fall (cane-friendly)</li>
+<li>Lunch: Base Camp Eatery</li>
 </ul>
+<span class="tag">Flow Day</span>
 </div>
 
-</section>
+---
 
+<!-- DAY 3 -->
+<div class="day">
+<h2>Day 3 — Tehachapi → Las Vegas</h2>
+<p>~4 hrs</p>
+<p>Transit day. Evening: drive the Strip.</p>
+<span class="tag">Reset Day</span>
 </div>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-const map = L.map('homewardMap').setView([36,-95],4);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-</script>
+---
 
+<!-- DAY 4 -->
+<div class="day">
+<h2>Day 4 — Las Vegas → Page (via Zion)</h2>
+<p>Drive through Zion National Park.</p>
+<span class="tag">Zion Drive</span>
+</div>
+
+---
+
+<!-- DAY 5 -->
+<div class="day">
+<h2>Day 5 — CONDOR DAY</h2>
+<p>Navajo Bridge</p>
+<span class="tag">Condors 🦅</span>
+<span class="tag">Light Day</span>
+</div>
+
+---
+
+<!-- DAY 6 -->
+<div class="day">
+<h2>Day 6 — Page → Albuquerque</h2>
+<p>Acoma Pueblo visit.</p>
+<span class="tag">Pueblos 🪶</span>
+</div>
+
+---
+
+<!-- DAY 7 -->
+<div class="day">
+<h2>Day 7 — Albuquerque → Trinidad</h2>
+<p>Bonus Colorado day.</p>
+<span class="tag">New State</span>
+</div>
+
+---
+
+<!-- DAY 8 -->
+<div class="day">
+<h2>Day 8 — Trinidad → Dodge City</h2>
+<p>🤠 Maverick Cowboy Day</p>
+<span class="tag">Boot Hill</span>
+<span class="tag">Cowboy Day</span>
+</div>
+
+---
+
+<!-- DAY 9 -->
+<div class="day">
+<h2>Day 9 — Dodge City → Kansas City</h2>
+<p>Diner Day</p>
+<span class="tag">Classic America</span>
+</div>
+
+---
+
+<!-- DAY 10 -->
+<div class="day">
+<h2>Day 10 — Kansas City → St. Louis → Effingham</h2>
+<p>Gateway Arch (ground visit only)</p>
+<span class="tag">Arch 🌉</span>
+</div>
+
+---
+
+<!-- DAY 11 -->
+<div class="day">
+<h2>Day 11 — Effingham → Beckley</h2>
+<p>New River Gorge stop</p>
+<span class="tag">Mountains Return</span>
+</div>
+
+---
+
+<!-- DAY 12 -->
+<div class="day">
+<h2>Day 12 — Beckley → Goldsboro</h2>
+<p>Home</p>
+<span class="tag">We Did It 🎉</span>
+</div>
+
+---
+
+</div>
 </body>
 </html>
