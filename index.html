@@ -26,15 +26,13 @@
     --shadow: 0 10px 28px rgba(47, 58, 74, 0.10);
     --blue: #92A1C3;
     --rose-dark: #B86F85;
+    --green: #7BAE8C;
+    --gold: #E8B86D;
   }
 
-  * {
-    box-sizing: border-box;
-  }
+  * { box-sizing: border-box; }
 
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 
   body {
     margin: 0;
@@ -154,12 +152,14 @@
     margin: 0 0 14px;
   }
 
-  .map-title-row h2 {
+  .map-title-row h2,
+  .day-title {
     margin: 0;
     font-family: "Quicksand", sans-serif;
-    font-size: 28px;
     color: var(--ink);
   }
+
+  .map-title-row h2 { font-size: 28px; }
 
   .map-note {
     margin: 4px 0 0;
@@ -179,9 +179,7 @@
     white-space: nowrap;
   }
 
-  .map-link:hover {
-    background: #7D8DB2;
-  }
+  .map-link:hover { background: #7D8DB2; }
 
   #homewardMap {
     width: 100%;
@@ -223,23 +221,163 @@
     font-weight: 700;
   }
 
-  .day-jump a:hover {
-    background: var(--rose);
-  }
+  .day-jump a:hover { background: var(--rose); }
 
-  .placeholder {
-    margin-top: 26px;
-    background: rgba(255,255,255,0.78);
-    border: 1px dashed var(--line);
-    border-radius: 22px;
+  .day-section {
+    margin-top: 30px;
+    background: rgba(255,255,255,0.92);
+    border: 1px solid var(--line);
+    border-radius: 28px;
     padding: 24px;
-    color: var(--muted);
-    text-align: center;
+    box-shadow: var(--shadow);
+    scroll-margin-top: 90px;
   }
 
-  .leaflet-popup-content-wrapper {
-    border-radius: 14px;
+  .day-kicker {
+    margin: 0 0 8px;
+    color: var(--rose-dark);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
   }
+
+  .day-title {
+    font-size: clamp(26px, 4vw, 38px);
+    line-height: 1.1;
+  }
+
+  .day-meta {
+    margin: 10px 0 0;
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .day-summary {
+    margin: 16px 0 0;
+    max-width: 780px;
+    color: #4B5563;
+    font-size: 16px;
+  }
+
+  .day-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 0.9fr;
+    gap: 18px;
+    margin-top: 22px;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+  }
+
+  .timeline:before {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 8px;
+    bottom: 8px;
+    width: 3px;
+    background: linear-gradient(180deg, var(--rose), var(--blue), var(--lilac));
+    border-radius: 999px;
+  }
+
+  .stop {
+    position: relative;
+    background: #FFFFFF;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+
+  .stop:before {
+    content: "";
+    position: absolute;
+    left: -27px;
+    top: 20px;
+    width: 18px;
+    height: 18px;
+    background: var(--rose);
+    border: 3px solid white;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(47,58,74,0.18);
+  }
+
+  .stop.drive:before { background: var(--blue); }
+  .stop.food:before { background: var(--gold); }
+  .stop.hotel:before { background: var(--lilac); }
+
+  .stop-time {
+    margin: 0 0 3px;
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  .stop h3 {
+    margin: 0;
+    font-family: "Quicksand", sans-serif;
+    font-size: 20px;
+  }
+
+  .stop p {
+    margin: 8px 0 0;
+    color: #4B5563;
+    font-size: 14px;
+  }
+
+  .tag-row {
+    margin-top: 10px;
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    display: inline-block;
+    background: #F8FBFE;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 4px 9px;
+    color: var(--ink);
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  .tag.foodtag { background: #FFF7E8; }
+  .tag.hoteltag { background: #F7F1FF; }
+  .tag.vegtag { background: #EEF8F1; }
+
+  .side-card {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F7FBFF 100%);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 18px;
+  }
+
+  .side-card + .side-card { margin-top: 14px; }
+
+  .side-card h3 {
+    margin: 0 0 10px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 21px;
+  }
+
+  .side-card ul {
+    margin: 0;
+    padding-left: 19px;
+    color: #4B5563;
+    font-size: 14px;
+  }
+
+  .side-card li { margin: 7px 0; }
+
+  .leaflet-popup-content-wrapper { border-radius: 14px; }
 
   .leaflet-popup-content {
     font-family: "Open Sans", Arial, sans-serif;
@@ -258,34 +396,34 @@
     color: var(--muted);
   }
 
+  @media (max-width: 820px) {
+    .day-grid { grid-template-columns: 1fr; }
+  }
+
   @media (max-width: 760px) {
-    .page-wrap {
-      padding: 18px 12px 44px;
-    }
+    .page-wrap { padding: 18px 12px 44px; }
 
     .hero {
       padding: 34px 18px;
       border-radius: 24px;
     }
 
-    .stat-strip {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    .stat-strip { grid-template-columns: repeat(2, 1fr); }
 
-    .map-title-row {
-      display: block;
-    }
+    .map-title-row { display: block; }
 
-    .map-link {
-      margin-top: 12px;
-    }
+    .map-link { margin-top: 12px; }
 
-    #homewardMap {
-      height: 420px;
+    #homewardMap { height: 420px; }
+
+    .day-section {
+      padding: 18px;
+      border-radius: 24px;
     }
   }
 </style>
 </head>
+
 <body>
 <div class="page-wrap">
 
@@ -298,22 +436,10 @@
     </p>
 
     <div class="stat-strip">
-      <div class="stat">
-        <div class="num">15</div>
-        <div class="lbl">Days</div>
-      </div>
-      <div class="stat">
-        <div class="num">~3,690</div>
-        <div class="lbl">Miles</div>
-      </div>
-      <div class="stat">
-        <div class="num">13</div>
-        <div class="lbl">Hotel Nights</div>
-      </div>
-      <div class="stat">
-        <div class="num">35+</div>
-        <div class="lbl">Stops</div>
-      </div>
+      <div class="stat"><div class="num">15</div><div class="lbl">Days</div></div>
+      <div class="stat"><div class="num">~3,690</div><div class="lbl">Miles</div></div>
+      <div class="stat"><div class="num">13</div><div class="lbl">Hotel Nights</div></div>
+      <div class="stat"><div class="num">35+</div><div class="lbl">Stops</div></div>
     </div>
 
     <div class="pill-row">
@@ -329,7 +455,7 @@
         <h2>Return Route Overview</h2>
         <p class="map-note">Major overnight stops from California back to North Carolina.</p>
       </div>
-      <a class="map-link" href="https://www.google.com/maps/dir/?api=1&origin=Buena%20Park%2C%20CA&destination=Goldsboro%2C%20NC&waypoints=Madera%2C%20CA%7CMammoth%20Lakes%2C%20CA%7CLas%20Vegas%2C%20NV%7CPage%2C%20AZ%7CGallup%2C%20NM%7CAlbuquerque%2C%20NM%7CAmarillo%2C%20TX%7COklahoma%20City%2C%20OK%7CLittle%20Rock%2C%20AR%7CMemphis%2C%20TN%7CNashville%2C%20TN%7CAsheville%2C%20NC">
+      <a class="map-link" href="https://www.google.com/maps/dir/?api=1&origin=Buena%20Park%2C%20CA&destination=Goldsboro%2C%20NC&waypoints=Madera%2C%20CA%7CMammoth%20Lakes%2C%20CA%7CLas%20Vegas%2C%20NV%7CPage%2C%20AZ%7CGallup%2C%20NM%7CAlbuquerque%2C%20NM%7CAmarillo%2C%20TX%7COklahoma%20City%2C%20OK%7CLittle%20Rock%2C%20AR%7CMemphis%2C%20TN%7CNashville%2C%20TN%7CAsheville%2C%20NC" target="_blank" rel="noopener">
         Open in Google Maps
       </a>
     </div>
@@ -357,8 +483,100 @@
     </div>
   </nav>
 
-  <section class="placeholder">
-    Day sections will be added next, one at a time.
+  <section class="day-section" id="day-1">
+    <p class="day-kicker">Day 1 · Monday, June 22</p>
+    <h2 class="day-title">Buena Park, CA → Madera, CA</h2>
+    <p class="day-meta">~4.5 hours driving · ~285 miles</p>
+    <p class="day-summary">
+      The first leg of the road home heads north through California’s Central Valley.
+      This is a simple, steady travel day with one reliable lunch stop and an early arrival
+      in Madera so the family can reset before Yosemite.
+    </p>
+
+    <div class="day-grid">
+      <div class="timeline">
+
+        <article class="stop">
+          <p class="stop-time">8:30 AM</p>
+          <h3>Depart Buena Park</h3>
+          <p>Begin the return trip after the California adventure. This is a good day to keep the morning simple and let the car rhythm settle in.</p>
+          <div class="tag-row">
+            <span class="tag">Start</span>
+            <span class="tag">California</span>
+          </div>
+        </article>
+
+        <article class="stop drive">
+          <p class="stop-time">Drive</p>
+          <h3>Buena Park → Buttonwillow</h3>
+          <p>About 2.5 hours of driving through the San Joaquin Valley before the planned lunch break.</p>
+          <div class="tag-row">
+            <span class="tag">~175 miles</span>
+            <span class="tag">I-5 stretch</span>
+          </div>
+        </article>
+
+        <article class="stop food">
+          <p class="stop-time">11:30 AM</p>
+          <h3>Lunch: Black Bear Diner</h3>
+          <p>
+            A reliable family chain in Buttonwillow with big booths, predictable food,
+            and an easy highway break before the second leg of the day.
+          </p>
+          <div class="tag-row">
+            <span class="tag foodtag">Lunch</span>
+            <span class="tag vegtag">Vegetarian-friendly</span>
+            <span class="tag">~1 hour</span>
+          </div>
+        </article>
+
+        <article class="stop drive">
+          <p class="stop-time">Drive</p>
+          <h3>Buttonwillow → Madera</h3>
+          <p>About 2 more hours north to Madera, keeping the day manageable and avoiding a late arrival.</p>
+          <div class="tag-row">
+            <span class="tag">~110 miles</span>
+            <span class="tag">Easy finish</span>
+          </div>
+        </article>
+
+        <article class="stop hotel">
+          <p class="stop-time">Late afternoon</p>
+          <h3>Overnight: Hampton Inn & Suites Madera</h3>
+          <p>
+            Madera becomes the Yosemite base for two nights. The goal is a calm check-in,
+            dinner nearby, and a quiet evening before the full Yosemite day.
+          </p>
+          <div class="tag-row">
+            <span class="tag hoteltag">Hotel</span>
+            <span class="tag">2-night base</span>
+          </div>
+        </article>
+
+      </div>
+
+      <aside>
+        <div class="side-card">
+          <h3>What to know today</h3>
+          <ul>
+            <li>Stay on Pacific Time all day.</li>
+            <li>This is a practical transition day, not a sightseeing day.</li>
+            <li>Keep Yosemite items together tonight so tomorrow morning is easier.</li>
+            <li>Fuel and restrooms are easiest around the lunch stop.</li>
+          </ul>
+        </div>
+
+        <div class="side-card">
+          <h3>Family rhythm</h3>
+          <ul>
+            <li>Simple breakfast before leaving Buena Park.</li>
+            <li>One planned sit-down lunch.</li>
+            <li>Early hotel arrival for decompression.</li>
+            <li>Pool or quiet room time if everyone needs a reset.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
   </section>
 
 </div>
@@ -403,14 +621,14 @@ const routeLine = L.polyline(routePoints, {
 
 const startIcon = L.divIcon({
   className: "",
-  html: '<div style="background:#F7DDE2;border:3px solid white;box-shadow:0 3px 10px rgba(0,0,0,.22);width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;"><span style="font-size:16px;">🚗</span></div>',
+  html: '<div style="background:#F7DDE2;border:3px solid white;box-shadow:0 3px 10px rgba(0,0,0,.22);width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;">▶</div>',
   iconSize: [28, 28],
   iconAnchor: [14, 14]
 });
 
 const endIcon = L.divIcon({
   className: "",
-  html: '<div style="background:#D7C9E8;border:3px solid white;box-shadow:0 3px 10px rgba(0,0,0,.22);width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;"><span style="font-size:16px;">🏡</span></div>',
+  html: '<div style="background:#D7C9E8;border:3px solid white;box-shadow:0 3px 10px rgba(0,0,0,.22);width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;">🏁</div>',
   iconSize: [28, 28],
   iconAnchor: [14, 14]
 });
